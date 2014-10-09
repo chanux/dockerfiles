@@ -2,7 +2,7 @@
 
 Seeing [tianon/sleeping-beauty](https://github.com/tianon/dockerfiles/tree/master/sleeping-beauty) I thought it would be great for data only containers.
 
-But data only containers needs not keep running. So I made exit. Actually, I just deleted some code from [docker-library/hello-world](https://github.com/docker-library/hello-world). Deal with it.
+But data only containers needs not keep running. So I made exit.
 
 # Running a data only container
 

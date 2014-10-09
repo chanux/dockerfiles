@@ -42,9 +42,9 @@ phdrsize equ $ - phdr
 
 ; The program
 _start:
-	; sys_exit(return_code)
-	mov	rax, 60          ; sys_exit
-	mov	rdi, 0           ; return 0 (success)
+	; sys_exit(return_code) : credit: @tiborvass
+    mov al, 60        ; sys_exit
+    cdq               ; Sign-extend eax into edi to return 0 (success)
 	syscall
 
 ; File size calculation
