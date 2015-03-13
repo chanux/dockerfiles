@@ -1,0 +1,19 @@
+from    debian:wheezy
+
+run     DEBIAN_FRONTEND=noninteractive apt-get -y update \
+        && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+            --no-install-recommends \
+            gcc \
+            make \
+            libc-dev-bin \
+            libc6-dev \
+            linux-libc-dev \
+            wget \
+        && apt-get clean
+
+add build.sh /build.sh
+
+volume /target
+
+entrypoint ["/build.sh"]
+cmd ["-t", "/target"]
