@@ -1,0 +1,17 @@
+from    debian:sid
+
+run     DEBIAN_FRONTEND=noninteractive apt-get -y update \
+        && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+#            --no-install-recommends \
+            fasm \
+            binutils \
+            wget \
+        && apt-get clean
+
+add build.sh /build.sh
+run chmod +x /build.sh
+
+volume /target
+
+entrypoint ["/build.sh"]
+cmd ["-t", "/target"]
