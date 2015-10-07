@@ -8,16 +8,13 @@ Mostly an educational exercise on how to use lua to bend requests on nginx.
 ```
 sudo docker build -t chanux/rusty .
 
-sudo docker run \
-    --env RUSTY_DOMAIN=rusty.dev \
-    --name rusty \
-    -d chanux/rusty
+sudo docker run --name rusty -d chanux/rusty
 ```
 
 To configure the revrse proxy do the following:
 
-The domain you need to use for the system is passed in as an environment variable (see example above).
-Let api.rusty.dev point to proxy container's IP. Also you need to set other domain/subdomains in the hosts file
+Let api.rusty.dev point to proxy container's IP.
+Also you need to set other domain/subdomains in the hosts file
 
 ```
 $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' proxy
