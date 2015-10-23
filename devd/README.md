@@ -11,7 +11,7 @@ Devd is developed by Aldo [Cortesi](https://twitter.com/cortesi)
 
 # Running
 
-Run the container mounting a directory with content from host to /www
+Run the container mounting a directory with content from host to /data
 
     docker run -d --name devd -v /path/to/content/dir:/data -p 8080:8080 chanux/devd -p 8080
 
