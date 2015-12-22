@@ -3,7 +3,7 @@ Rusty
 
 *A reverse proxy you can configure with curl*
 
-Mostly an educational exercise on how to use lua to bend requests on nginx.
+Mostly an educational exercise on how to use lua to __bend__ requests on nginx.
 
 ```
 sudo docker build -t chanux/rusty .
@@ -11,7 +11,7 @@ sudo docker build -t chanux/rusty .
 sudo docker run --name rusty -d chanux/rusty
 ```
 
-To configure the revrse proxy do the following:
+To configure the reverse proxy do the following:
 
 Let api.rusty.dev point to proxy container's IP.
 Also you need to set other domain/subdomains in the hosts file
@@ -31,7 +31,7 @@ To configure unicorns.rusty.dev, pass the appropriate backend's IP as follows
 
 You can set the reverse proxy records for other domains the same way.
 
-`curl api.rusty.dev/set/lau.rusty.dev/www.lua.org`
+`curl api.rusty.dev/set/lua.rusty.dev/www.lua.org`
 
 To troubleshoot, you can get a terminal to proxy container and check the nginx logs
 
