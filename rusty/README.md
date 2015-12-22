@@ -33,6 +33,11 @@ You can set the reverse proxy records for other domains the same way.
 
 `curl api.rusty.dev/set/lua.rusty.dev/www.lua.org`
 
+Rusty can store this data on redis. You just have to connect a redis container as 'redis'
+when you run Rusty.
+
+`sudo docker run --link redis:redis --name rusty -d chanux/rusty`
+
 To troubleshoot, you can get a terminal to proxy container and check the nginx logs
 
 ```
