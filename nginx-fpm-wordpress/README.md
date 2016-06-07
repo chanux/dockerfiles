@@ -16,7 +16,9 @@ Build fpm image adding mysqli to php:fpm image
 
 Run php-fpm docker
 
-    docker run -d -p 9000:9000 --name fpm --link sherm3db:mysql -v "$PWD"/www.conf:/usr/local/etc/php-fpm.d/www.conf -v /opt/wordpress:/opt/wordpress chanux/fpm
+    docker run -d -p 9000:9000 --name fpm --link wpmysql:mysql -v "$PWD"/www.conf:/usr/local/etc/php-fpm.d/www.conf -v /opt/wordpress:/opt/wordpress chanux/fpm
+
+*There I'm using a custom fpm config (www.conf) to show you how to do that. In that config file I'm using ondemand process manager[1] for fpm*
 
 Run nginx docker linking fpm container
 
@@ -33,3 +35,5 @@ Caddy will take care of the rest using the Caddyfile provided.
 Take a look at the Caddyfile. Yeah that's all it takes :).
 
 You can use Dockerized Caddy but I'll leave that for you to explore.
+
+[1] [A better way to run php-fpm](https://ma.ttias.be/a-better-way-to-run-php-fpm/)
