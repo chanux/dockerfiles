@@ -1,0 +1,12 @@
+http://wp.dev
+root /opt/wordpress
+
+fastcgi / 127.0.0.1:9000 php
+
+rewrite {
+    if {path} not_match ^\/wp-admin
+    to {path} {path}/ /index.php?_url={uri}
+}
+
+log access.log
+errors error.log
